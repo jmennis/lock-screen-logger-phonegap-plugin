@@ -1,3 +1,6 @@
+// https://github.com/don/cordova-plugin-hello
+// https://thinkandroid.wordpress.com/2010/01/24/handling-screen-off-and-screen-on-intents/
+
 package com.jmennis.lockscreenloggerplugin;
 
 import org.apache.cordova.*;
