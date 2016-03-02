@@ -6,8 +6,10 @@ public class ScreenReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         if (intent.getAction().equals(Intent.ACTION_SCREEN_OFF)) {
             screenOff = true;
+            System.out.println("SCREEN TURNED OFF");
         } else if (intent.getAction().equals(Intent.ACTION_SCREEN_ON)) {
             screenOff = false;
+            System.out.println("SCREEN TURNED ON");
         }
         Intent i = new Intent(context, UpdateService.class);
         i.putExtra("screen_state", screenOff);
@@ -33,10 +35,10 @@ public static class UpdateService extends Service {
             boolean screenOn = intent.getBooleanExtra("screen_state", false);
             if (!screenOn) {
                 // YOUR CODE
-                System.out.println("SCREEN TURNED OFF");
+
             } else {
                 // YOUR CODE
-                System.out.println("SCREEN TURNED ON");
+
             }
         }
 }
