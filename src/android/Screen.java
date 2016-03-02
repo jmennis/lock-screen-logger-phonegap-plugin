@@ -9,14 +9,10 @@ public class Screen extends CordovaPlugin {
     @Override
     public boolean execute(String action, JSONArray data, CallbackContext callbackContext) throws JSONException {
 
-        if (action.equals("init")) {
-            System.out.println("PLUGIN: Screen - init");
+        if (action.equals("start")) {
+            System.out.println("PLUGIN: Screen - start");
             // String name = data.getString(0);
             // String message = "Hello, " + name;
-            callbackContext.success(message);
-            return true;
-        } else if (action.equals("getScreenStatus")) {
-            System.out.println("PLUGIN: Screen - getScreenStatus");
             callbackContext.success(message);
             return true;
         } else {
