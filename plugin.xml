@@ -3,19 +3,19 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:rim="http://www.blackberry.com/ns/widgets"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="com.citronium.lockscreenloggerplugin"
+    id="com.jmennis.lockscreenloggerplugin"
     version="0.1">
     <name>Screen</name>
     <description>LockScreenLoggerCDVPlugin</description>
     <license>MIT</license>
-    <keywords>lock screen,logger,citronium</keywords>
+    <keywords>lock screen,logger,citronium,jmennis</keywords>
     <repo></repo>
     <issue></issue>
-    
+
     <js-module src="www/Screen.js" name="Screen">
         <clobbers target="Screen" />
     </js-module>
-    
+
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
@@ -23,9 +23,19 @@
                 <param name="ios-package" value="Screen"/>
             </feature>
         </config-file>
-        
+
         <header-file src="src/ios/Screen.h" />
         <source-file src="src/ios/Screen.m" />
     </platform>
-    
+
+    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+        <activity android:name="com.jmennis.lockscreenloggerplugin" android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="ACTION_SCREEN_OFF" />
+                <action android:name="ACTION_SCREEN_ON" />
+            </intent-filter>
+        </activity>
+        <source-file src="src/android/Screen.java" />
+    </config-file>
+
 </plugin>
