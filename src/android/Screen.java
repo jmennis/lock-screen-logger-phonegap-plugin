@@ -14,8 +14,8 @@ public class Screen extends CordovaPlugin {
 
         if (action.equals("start")) {
             System.out.println("PLUGIN: Screen - start");
-            // String name = data.getString(0);
-            // String message = "Hello, " + name;
+            String name = data.getString(0);
+            String message = "Hello, " + name;
             callbackContext.success(message);
             return true;
         } else {
