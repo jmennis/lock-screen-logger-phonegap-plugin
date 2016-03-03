@@ -28,14 +28,19 @@
         <source-file src="src/ios/Screen.m" />
     </platform>
 
-    <config-file target="AndroidManifest.xml" parent="/manifest/application">
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+          <feature name="Screen">
+            <param name="android-package" value="com.jmennis.lockscreenloggerplugin"/>
+          </feature>
+        </config-file>
+        <source-file src="src/android/Screen.java" target-dir="src/com/jmennis/lockscreenloggerplugin/"/>
         <activity android:name="com.jmennis.lockscreenloggerplugin" android:label="@string/app_name">
             <intent-filter>
                 <action android:name="ACTION_SCREEN_OFF" />
                 <action android:name="ACTION_SCREEN_ON" />
             </intent-filter>
         </activity>
-        <source-file src="src/android/Screen.java" />
-    </config-file>
+    </platform>
 
 </plugin>
